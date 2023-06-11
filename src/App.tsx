@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import ButtonModal from "./components/Modal/ButtonModal";
+import ModalButton from "./components/Modal/ModalButton";
 
 function App() {
     return (
         <div className="App">
-            <ButtonModal />
+            <ModalButton />
         </div>
     );
 }

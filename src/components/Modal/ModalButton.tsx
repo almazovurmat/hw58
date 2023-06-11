@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Modal from "./Modal";
 import {nanoid} from "nanoid";
 
-const ButtonModal= () => {
+const ModalButton= () => {
     const [isShow, setIsShow] = useState(false);
 
     const callAlert = () => (alert());
@@ -38,4 +38,4 @@ const ButtonModal= () => {
     );
 };
 
-export default ButtonModal;
+export default ModalButton;
