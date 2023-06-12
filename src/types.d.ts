@@ -7,4 +7,5 @@ export interface IAlertData {
     type: string;
     text: string;
     onDismiss?: (number:number) => void;
+    clickDismissable: boolean;
 }

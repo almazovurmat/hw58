@@ -15,8 +15,9 @@ const App = () => {
     };
 
     const [alertData, setAlertData] = useState<IAlertData[]>([
-        { type: 'warning', text: 'Это оповещение типа "warning"', onDismiss: closeAlert },
-        { type: 'success', text: 'Это оповещение типа "success"' }
+        { type: 'primary', text: 'Это оповещение типа "primary"', onDismiss: closeAlert, clickDismissable: true },
+        { type: 'warning', text: 'Это оповещение типа "warning"', onDismiss: closeAlert, clickDismissable: true },
+        { type: 'success', text: 'Это оповещение типа "success"', clickDismissable: false }
     ]);
 
     return (
@@ -24,7 +25,10 @@ const App = () => {
             <ModalButton />
             {alertData.map((alert, index) => (
                 <div className="w-25 mx-auto" key={nanoid()}>
-                    <Alert type={alert.type} onDismiss={('onDismiss' in alert) ? () => closeAlert(index) : undefined}>
+                    <Alert type={alert.type}
+                           onDismiss={('onDismiss' in alert) ? () => closeAlert(index) : undefined}
+                           clickDismissable={alert.clickDismissable}
+                    >
                         {alert.text}
                     </Alert>
                 </div>
