@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import {nanoid} from "nanoid";
 import ModalButton from "./components/Modal/ModalButton";
-import './App.css';
 import Alert from "./components/Alert/Alert";
 import { IAlertData } from "./types";
-import {nanoid} from "nanoid";
+import './App.css';
 
 const App = () => {
     const closeAlert = (index: number) => {
@@ -24,14 +25,22 @@ const App = () => {
         <div className="App container">
             <ModalButton />
             {alertData.map((alert, index) => (
-                <div className="w-25 mx-auto" key={nanoid()}>
-                    <Alert type={alert.type}
-                           onDismiss={('onDismiss' in alert) ? () => closeAlert(index) : undefined}
-                           clickDismissable={alert.clickDismissable}
+                <motion.div
+                    className="w-25 mx-auto"
+                    key={nanoid()}
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3 }}
+                >
+                    <Alert
+                        type={alert.type}
+                        onDismiss={('onDismiss' in alert) ? () => closeAlert(index) : undefined}
+                        clickDismissable={alert.clickDismissable}
                     >
                         {alert.text}
                     </Alert>
-                </div>
+                </motion.div>
             ))}
         </div>
     );
