@@ -17,7 +17,7 @@ const ModalButton= () => {
     return (
         <>
             <button
-                className="w-30 btn btn-primary"
+                className="w-30 btn btn-primary mx-3 my-5"
                 type="button"
                 onClick={open}>
                 Show modal

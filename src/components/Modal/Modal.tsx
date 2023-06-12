@@ -15,7 +15,7 @@ const Modal: React.FC <IProps> = ({showModal, title , onCloseModal ,children}) =
                     <div className="modal-content">
                         <div className="modal-header">
                             <h1 className="modal-title fs-5">{title}</h1>
-                            <button onClick={onCloseModal} type="button" className="close" data-dismiss="modal" aria-label="Close">
+                            <button onClick={onCloseModal} type="button" className="close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
